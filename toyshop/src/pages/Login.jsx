@@ -4,7 +4,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Checkbox } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { errorToast, successToast } from "./Home";
 
 export default function Login() {
 
@@ -17,23 +18,9 @@ export default function Login() {
     password:password
   }
 
-  const successToast = (message)=>{
-    toast.success(message, {
-        position: "top-right",
-
-        });
-  }
-
-  const errorToast = (details)=>{
-    toast.error(details, {
-        position: "top-right",
-
-        });
-  }
-
   const handleLogin = async ()=> {
     if(!email || !password ){
-      alert('All fields mandatory');
+        errorToast('All fields mandatory');
       return
     }
     try {

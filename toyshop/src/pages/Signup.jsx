@@ -3,7 +3,8 @@ import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Link, useNavigate } from "react-router-dom";
-import { Bounce, toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
+import { errorToast, successToast } from "./Home";
 
 
 export default function Singnup() {
@@ -18,28 +19,14 @@ export default function Singnup() {
     password:password
   }
 
-  const successToast = (message)=>{
-    toast.success(message, {
-        position: "top-right",
-
-        });
-  }
-
-  const errorToast = (details)=>{
-    toast.error(details, {
-        position: "top-right",
-
-        });
-  }
-
   const handleSignup = async ()=> {
     if(!email || !password || !cpassword){
-      alert('All fields mandatory');
+        errorToast('All fields mandatory');
       return
     }
 
     if(cpassword !== password){
-      alert('Password does not match!');
+        errorToast('Password does not match!');
       return
     }
     try {

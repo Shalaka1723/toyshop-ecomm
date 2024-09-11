@@ -3,6 +3,19 @@ import Navbar from '../components/Navbar'
 import { useNavigate } from 'react-router-dom';
 import {toast, ToastContainer } from "react-toastify";
 
+
+export const successToast = (message) => {
+    toast.success(message, {
+        position: 'top-right'
+    })
+}
+
+export const errorToast = (message) => {
+    toast.error(message, {
+        position: 'top-right'
+    })
+}
+
 function Home() {
   const [loggedInUser,setLoggedInUser] = useState('');
   const navigate = useNavigate()
