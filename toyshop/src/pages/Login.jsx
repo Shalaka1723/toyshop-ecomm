@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Checkbox, IconButton } from "@mui/material";
+import { Checkbox } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
-export default function LogIn() {
+import { Bounce, toast, ToastContainer } from "react-toastify";
+
+export default function Login() {
+
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
   const navigate = useNavigate()
@@ -42,11 +45,15 @@ export default function LogIn() {
             },
             body: JSON.stringify(loginData)
         });
+
         const result = await response.json();
-        const {success, message, error} = result;
+        const {success, message, jwtToken, error} = result;
         console.log(message);
+
         if(success){
             successToast(message);
+            localStorage.setItem('token', jwtToken);
+            localStorage.setItem('loggedInUser', email);
             setTimeout(()=>{
                 navigate('/home')
             },1000)
@@ -58,7 +65,7 @@ export default function LogIn() {
         }
         console.log(result);
     } catch (err) {
-        console.log(err);
+        errorToast(err);
     }
 
     console.log(loginData)
@@ -85,7 +92,7 @@ export default function LogIn() {
               type="email"
               id="email"
               value={email}
-              onChange={(e)=>setEmail(e)}
+              onChange={(e)=>setEmail(e.target.value)}
               className="rounded border-2 w-full px-2 py-1 focus:border-gray-600"
             />
           </div>
@@ -99,7 +106,7 @@ export default function LogIn() {
               type="password"
               id="password"
               value={password}
-              onChange={(e)=>setPassword(e)}
+              onChange={(e)=>setPassword(e.target.value)}
               className="rounded border-2 w-full px-2 py-1 focus:border-gray-600"
             />
           </div>
@@ -122,21 +129,21 @@ export default function LogIn() {
               onClick={()=>handleLogin()}
               className="drop-shadow-lg p-2 bg-[#fffb94] text-[#98941e] font-semibold w-full rounded-xl "
             >
-              LOGIN
-            </Link>
+              LOGIN</Link>
+
           </div>
           {/* <div className="flex justify-between mt-8 text-sm ">
             <Link to={"/ForgotP"} className="">
               Forgot Password?
             </Link> */}
             <div className="mt-8 text-sm text-[#98941e]">
-              Need an account?
+              Don't have an account?
               <Link to={"/signup"} className="pl-1 underline">
-                SIGN UP
-              </Link>
+                SignUp</Link>
+
             </div>
           {/* </div> */}
-          <hr className="mt-2 mb-4 border-1"></hr>
+          <hr className="mt-2 mb-4 border-black"></hr>
 
           <div className=" flex justify-center gap-3 ">
             <GoogleIcon sx={{ color: "#98941e" }} />
@@ -144,7 +151,9 @@ export default function LogIn() {
             <LinkedInIcon sx={{ color: "#98941e" }} />
           </div>
         </div>
+        <ToastContainer />
       </div>
+
     </>
   );
 }

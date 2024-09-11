@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 
-export default function Singup() {
+export default function Singnup() {
 
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
@@ -51,9 +51,11 @@ export default function Singup() {
             },
             body: JSON.stringify(signupData)
         });
+
         const result = await response.json();
         const {success, message, error} = result;
         console.log(message);
+
         if(success){
             successToast(message);
             setTimeout(()=>{
@@ -67,7 +69,7 @@ export default function Singup() {
         }
         console.log(result);
     } catch (err) {
-        console.log(err);
+        errorToast(err);
     }
 
     console.log(signupData)
@@ -138,11 +140,11 @@ export default function Singup() {
             <div className="">
               Already have an account?
               <Link to={"/login"} className="pl-1 underline">
-                LOGIN
-              </Link>
+                Login</Link>
+
             </div>
           </div>
-          <hr className="mt-2 mb-4 border-1"></hr>
+          <hr className="mt-2 mb-4 border-black"></hr>
 
           <div className=" flex justify-center gap-3 ">
             <GoogleIcon sx={{ color: "#98941e" }} />
