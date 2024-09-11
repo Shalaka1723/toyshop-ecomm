@@ -5,8 +5,8 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Singup from './pages/Signup'
 
-function App() {
 
+function App() {
 
   return (
     <>
