@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({size}) => {
   let[cartOpen,setCartOpen]=useState(false)
 
   return (
@@ -20,6 +20,7 @@ const Navbar = () => {
           <li>
             <button className='' onClick={()=>{setCartOpen(!cartOpen)}}>
             <ShoppingCartIcon/>
+              <span>{size}</span>
             </button>
           </li>
           <li>{cartOpen && <Cart/>}</li>

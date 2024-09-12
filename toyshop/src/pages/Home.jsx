@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar'
 import { useNavigate } from 'react-router-dom';
 import {toast, ToastContainer } from "react-toastify";
 import ProductCard from '../components/ProductCard';
-
+import Cart from '../components/Cart';
+import productData from '../productData';
 
 export const successToast = (message) => {
     toast.success(message, {
@@ -19,6 +20,7 @@ export const errorToast = (message) => {
 
 function Home() {
   const [loggedInUser,setLoggedInUser] = useState('');
+  const [cart,setCart] = useState('');
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -35,20 +37,56 @@ function Home() {
     },1000)
   }
 
+  // const handleClick = (item)=>{
+	// 	let isPresent = false;
+	// 	cart.forEach((product)=>{
+	// 		if (item.id === product.id)
+	// 		isPresent = true;
+	// 	})
+	// 	if (isPresent){
+	// 		setWarning(true);
+	// 		setTimeout(()=>{
+	// 			setWarning(false);
+	// 		}, 2000);
+	// 		return ;
+	// 	}
+	// 	setCart([...cart, item]);
+	// }
+
+
   return (
     <>
     <div>
-      <Navbar/>
+
+      <Navbar size={cart.length} />
      
-      <div  className='flex justify-center'>
+      <div className='flex justify-center'>
         <div className='bg-teal-400'>
          <h1>Hello {loggedInUser}</h1>
          <button onClick={actionLogout}>Logout</button>
         </div>
         <ToastContainer/>
-
       </div>
-        <ProductCard/>
+
+        <section>
+          <div className="grid grid-cols-4 gap-3 p-4">
+
+            {
+              productData.map((item)=>(
+                <ProductCard 
+                item={item} 
+                key={item.id} 
+                pImage={item.pImage} 
+                pName={item.pName} 
+                price={item.price} />
+              ))
+            }
+
+        </div>
+    </section>
+
+    <Cart/>
+
     </div>
     </>
   )
