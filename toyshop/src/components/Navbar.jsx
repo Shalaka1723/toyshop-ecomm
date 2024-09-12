@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 // import Cart from './Cart'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const Navbar = ({size}) => {
-  // let[cartOpen,setCartOpen]=useState(false)
+const Navbar = () => {
+
+  const carts = useSelector(store=> store.cart.items);
+  const cartItems = carts.length
+  const navigate = useNavigate()
+  console.log(cartItems)
+  console.log(carts)
 
   return (
     <>
@@ -18,10 +24,11 @@ const Navbar = ({size}) => {
         </ul> */}
         <ul className='flex space-x-3'>
           <li>
-            <button className='' onClick={()=>{}}>
+            <button className='' onClick={()=>{navigate('/cart')}}>
             <ShoppingCartIcon/>
-              <span>{size}</span>
+              <span>{cartItems}</span>
             </button>
+
           </li>
           {/* <li>{cartOpen && <Cart/>}</li> */}
           <li><Link to={"/Login"} className=' '>LOGIN </Link></li>

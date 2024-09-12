@@ -44,7 +44,7 @@ function Home() {
     <>
     <div>
 
-      <Navbar  />
+      <Navbar size={cart.length} />
      
       <div className='flex justify-center'>
         <div className='bg-teal-400'>

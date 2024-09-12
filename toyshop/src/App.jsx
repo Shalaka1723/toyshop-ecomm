@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Singup from './pages/Signup'
 import { useState } from 'react'
+import RefreshHandler from './RefreshHandler'
+import Cart from './components/Cart'
 
 
 function App() {
@@ -17,11 +19,13 @@ function App() {
     <>
       <div>
       <BrowserRouter>
+      <RefreshHandler setIsAuthenticated={setIsAuthenticated}/>
         <Routes>
           <Route path='/' index element={<Home/>} />
           <Route path="/home" element={<PrivateRoute element={<Home/>}/> } />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Singup/>} />
+          <Route path="/cart" element={<Cart/>} />
         </Routes>
       </BrowserRouter>
       </div>
