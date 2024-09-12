@@ -37,28 +37,14 @@ function Home() {
     },1000)
   }
 
-  // const handleClick = (item)=>{
-	// 	let isPresent = false;
-	// 	cart.forEach((product)=>{
-	// 		if (item.id === product.id)
-	// 		isPresent = true;
-	// 	})
-	// 	if (isPresent){
-	// 		setWarning(true);
-	// 		setTimeout(()=>{
-	// 			setWarning(false);
-	// 		}, 2000);
-	// 		return ;
-	// 	}
-	// 	setCart([...cart, item]);
-	// }
+
 
 
   return (
     <>
     <div>
 
-      <Navbar size={cart.length} />
+      <Navbar  />
      
       <div className='flex justify-center'>
         <div className='bg-teal-400'>

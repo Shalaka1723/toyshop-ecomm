@@ -1,34 +1,39 @@
+import remotecar from './assets/remotecar.png';
+import barbie from './assets/barbie.png';
+import softtoy from './assets/softtoy.jpg';
+import dumper from './assets/dumper.png';
+
 const list = [
     {
       id: 1,
-      pName: "My First Book of Pencil Control",
+      pName: "Remote Control Car",
       description: "by Wonder House Books | 25 April 2018",
       price: 89,
-      pImage: "https://m.media-amazon.com/images/I/810OOg88LoL._AC_UY327_FMwebp_QL65_.jpg",
+      pImage: remotecar,
       amount: 1,
     },
     {
       id: 2,
-      pName: "108 Panchatantra Stories",
+      pName: "Unicorn Softie",
       description: "by Maple Press  | 1 September 2020",
       price: 98,
-      pImage: "https://m.media-amazon.com/images/I/71rmxx8P2qL._AC_UY327_FMwebp_QL65_.jpg",
+      pImage: softtoy,
       amount: 1,
     },
     {
       id: 3,
-      pName: "Amazing Questions & Answers Science",
+      pName: "Barbie Mermaid Set",
       description: "by Om Books Editorial Team  | 25 November 2018",
       price: 143,
-      pImage: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
+      pImage: barbie,
       amount: 1,
     },
     {
       id: 4,
-      pName: "My First Book of Pencil Control",
+      pName: "My First Dumper",
       description: "by Wonder House Books | 25 April 2018",
       price: 57,
-      pImage: "https://m.media-amazon.com/images/I/81Gbz0XnW7L._AC_UY327_FMwebp_QL65_.jpg",
+      pImage: dumper,
       amount: 1,
     },
     {
