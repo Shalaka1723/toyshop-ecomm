@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { useNavigate } from 'react-router-dom';
 import {toast, ToastContainer } from "react-toastify";
+import ProductCard from '../components/ProductCard';
 
 
 export const successToast = (message) => {
@@ -47,6 +48,7 @@ function Home() {
         <ToastContainer/>
 
       </div>
+        <ProductCard/>
     </div>
     </>
   )
