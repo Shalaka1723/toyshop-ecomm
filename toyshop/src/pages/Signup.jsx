@@ -122,7 +122,7 @@ export default function Singnup() {
             </div>
           </section>
 
-          <section className="right w-1/3">
+          <section className="right w-1/3 place-content-evenly">
             <div className="  drop-shadow-xl text-lg text-center text-[#521973] font-medium p-2  mb-4 ">
               Create your Toy Shop account.
             </div>
