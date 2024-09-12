@@ -14,8 +14,8 @@ const Navbar = () => {
 
   return (
     <>
-    <div className='flex relative w-screen  h-24 justify-between items-center shadow-lg bg-[#ffd231] text-[#208e95] px-7 py-9 '>
-        <h1 className=' text-4xl font-bold'>THE TOY SHOP</h1>
+    <div className='flex relative w-screen  h-24 justify-between items-center shadow-lg bg-[#4b1471] text-[#ffde5a] px-7 py-9 '>
+        <a href='/' className=' text-4xl font-bold'>THE TOY SHOP</a>
         {/* <ul className='flex space-x-10'>
             <li className=' transition-all hover:border-b-4 border-yellow-200 hover:text-pink-600'>All</li>
             <li className=' transition-all hover:border-b-4 border-yellow-200 hover:text-pink-600'>Girls</li>
