@@ -123,17 +123,13 @@ export default function Login() {
               Login with your Toy Shop account credentials.
             </div>
 
-            {/* <div className="flex justify-between mt-8 text-sm ">
-            <Link to={"/ForgotP"} className="">
-              Forgot Password?
-            </Link> */}
             <div className="mt-8 text-sm text-center text-[#98941e]">
               Don't have an account?
               <Link to={"/signup"} className="pl-1 underline hover:text-[#532a6f]">
                 SignUp</Link>
                 
             </div>
-            {/* </div> */}
+      
             <hr className="mt-2 mb-4 border-[#4b1471]"></hr>
 
             <div className=" flex justify-center gap-3 ">

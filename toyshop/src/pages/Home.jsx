@@ -46,7 +46,6 @@ function Home() {
           <section className="left h-screen w-1/5 p-4 bg-gray-100 border-r">
             <h2 className="text-2xl font-bold mb-4">Filters</h2>
 
-            {/* Price Range */}
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Price Range</h3>
               <input type="range" min="0" max="2000" className="w-full" />
@@ -56,7 +55,7 @@ function Home() {
               </div>
             </div>
 
-            {/* Category Checkboxes */}
+     
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Category</h3>
               <div className="flex flex-col space-y-2">
@@ -79,7 +78,7 @@ function Home() {
               </div>
             </div>
 
-            {/* Sort Options */}
+    
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Sort By</h3>
               <select className="w-full border border-gray-300 rounded-md p-2">
@@ -90,7 +89,7 @@ function Home() {
               </select>
             </div>
 
-            {/* Clear Filters */}
+           
             <button className="bg-red-500 text-white py-2 px-4 rounded-md w-full">
               Clear Filters
             </button>
@@ -109,7 +108,8 @@ function Home() {
               </button>
             </div>):null}
 
-            <div className="grid grid-cols-4 gap-3 p-4">
+              <h1 className=" text-xl text-center text-[#521973] font-bold bg-slate-50 p-2">ALL PRODUCTS</h1>
+            <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-3 p-4">
               {productData.map((item) => (
                 <ProductCard
                   item={item}

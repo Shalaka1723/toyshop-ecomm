@@ -17,7 +17,7 @@ function Cart() {
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        {/* Navbar */}
+
         <Navbar />
 
         {/* Cart Section */}
@@ -31,7 +31,7 @@ function Cart() {
           </button>
         </section>
 
-        {/* Main Cart Content */}
+        {/* Cart Content */}
         <div className="flex-1 px-10 overflow-auto">
           <div className="bg-[#f9f4fc] h-fit p-5 rounded-sm">
             <section className="flex flex-col gap-5">
@@ -44,7 +44,7 @@ function Cart() {
           </div>
         </div>
 
-        {/* Footer */}
+
         <Footer />
       </div>
     </>

@@ -34,7 +34,7 @@ const Navbar = () => {
           THE TOY SHOP
         </a>
 
-        {/* Desktop Menu */}
+        {/* Desktop version */}
         <ul className="hidden md:flex space-x-10">
           {categories.map((category, index) => (
             <li
@@ -46,7 +46,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Cart and Authentication links */}
+        {/* Cart functions*/}
         <ul className="hidden md:flex space-x-3">
         {loggedInUser ? 
         (<li>
@@ -82,7 +82,7 @@ const Navbar = () => {
           }    
         </ul>
 
-        {/* Mobile Menu Toggle Button */}
+        {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
           className="md:hidden text-white"

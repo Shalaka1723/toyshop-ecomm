@@ -17,10 +17,8 @@ function ProductCard(productDetails) {
             quantity: 1,
             price: price
         }))
-
         }
         
-
 
   return (
     <>
