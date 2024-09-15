@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import ProductCard from '../components/ProductCard';
 import Cart from '../components/Cart';
@@ -45,6 +45,7 @@ function Home() {
           {/* Left section: Filters */}
           <section className="left h-screen w-1/5 p-4 bg-gray-100 border-r">
             <h2 className="text-2xl font-bold mb-4">Filters</h2>
+            <Link ></Link>
 
             <div className="mb-6">
               <h3 className="font-semibold mb-2">Price Range</h3>
